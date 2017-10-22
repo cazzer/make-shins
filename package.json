@@ -38,7 +38,7 @@
     "eslint-plugin-import": "^2.2.0"
   },
   "scripts": {
-    "build": "babel src -d lib && chmod +x ./lib/make-*",
+    "build": "babel src -d lib",
     "prepublish": "yarn run build",
     "lint": "eslint src/**/*.js"
   },
