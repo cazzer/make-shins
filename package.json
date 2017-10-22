@@ -39,7 +39,6 @@
   },
   "scripts": {
     "build": "babel src -d lib",
-    "prepublish": "yarn run build",
     "lint": "eslint src/**/*.js"
   },
   "bin": {
