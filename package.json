@@ -39,7 +39,8 @@
   },
   "scripts": {
     "build": "babel src -d lib",
-    "lint": "eslint src/**/*.js"
+    "lint": "eslint src/**/*.js",
+    "publish-zip": "tar -cf make-shins.zip -X .npmignore . && npm publish make-shins.zip"
   },
   "bin": {
     "make-shins": "./lib/make-shins.js"
