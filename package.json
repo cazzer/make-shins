@@ -3,7 +3,25 @@
   "version": "0.2.0",
   "description": "CLI for Shins, helpful for generating static assets",
   "author": "Caleb Brewer (caleb@cazzer.io)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cazzer/make-shins.git"
+  },
+  "keywords": [
+    "shins",
+    "slate",
+    "swagger",
+    "openapi",
+    "api",
+    "documentation",
+    "docs",
+    "cli"
+  ],
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cazzer/make-shins/issues"
+  },
+  "homepage": "https://github.com/cazzer/make-shins#readme",
   "main": "./lib/build-shins",
   "dependencies": {
     "commander": "^2.11.0",
