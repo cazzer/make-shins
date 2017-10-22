@@ -1,0 +1,29 @@
+{
+  "name": "make-slate",
+  "version": "0.1.0",
+  "description": "Makes slate, also makes slate ready docs from Postgres",
+  "author": "Caleb Brewer (caleb@cazzer.io)",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.11.0",
+    "json2md": "^1.5.10",
+    "pg-structure": "^4.0.4",
+    "shins": "^2.0.1-5"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.3.2",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.1.3",
+    "eslint-plugin-import": "^2.2.0"
+  },
+  "scripts": {
+    "build": "babel src -d lib && chmod +x ./lib/build-*",
+    "prepublish": "yarn run build"
+  },
+  "bin": {
+    "build-shins": "./lib/build-shins.js",
+    "build-pg-markdown": "./lib/markdown.js"
+  }
+}
