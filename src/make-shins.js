@@ -40,8 +40,7 @@ shins.render(
       // prepare by removing, since shins uses symlinks which break copySync
       fs.removeSync(program.output)
       d('Writing output')
-      console.log(__dirname, __filename)
-      fs.copySync(path.join(__dirname, '../node_modules/shins', program.output))
+      fs.copySync(path.join(__dirname, '../node_modules/shins'), program.output)
       fs.writeFileSync(path.join(program.output, 'index.html'), html)
 
       if (program['custom-css']) {
