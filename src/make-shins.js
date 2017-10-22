@@ -45,7 +45,7 @@ shins.render(
         fs.copySync(
           path.join(
             rootPath,
-            '/node_modules/make-shins/node_modules/shins'
+            '/make-shins/node_modules/shins'
           ),
           program.output
         )
