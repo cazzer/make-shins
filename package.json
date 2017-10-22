@@ -1,14 +1,14 @@
 {
-  "name": "make-slate",
+  "name": "make-shins",
   "version": "0.1.1",
-  "description": "Makes slate, also makes slate ready docs from Postgres",
+  "description": "CLI for Shins, helpful for generating static assets",
   "author": "Caleb Brewer (caleb@cazzer.io)",
   "license": "MIT",
   "main": "./lib/build-shins",
   "dependencies": {
     "commander": "^2.11.0",
-    "json2md": "^1.5.10",
-    "pg-structure": "^4.0.4",
+    "debug": "^3.1.0",
+    "fs-extra": "^4.0.2",
     "shins": "^2.0.1-5"
   },
   "devDependencies": {
@@ -20,11 +20,11 @@
     "eslint-plugin-import": "^2.2.0"
   },
   "scripts": {
-    "build": "babel src -d lib && chmod +x ./lib/build-*",
-    "prepublish": "yarn run build"
+    "build": "babel src -d lib && chmod +x ./lib/make-*",
+    "prepublish": "yarn run build",
+    "lint": "eslint src/**/*.js"
   },
   "bin": {
-    "build-shins": "./lib/build-shins.js",
-    "build-pg-markdown": "./lib/markdown.js"
+    "make-shins": "./lib/make-shins.js"
   }
 }
