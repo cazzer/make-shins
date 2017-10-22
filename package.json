@@ -1,6 +1,6 @@
 {
   "name": "make-shins",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "CLI for Shins, helpful for generating static assets",
   "author": "Caleb Brewer (caleb@cazzer.io)",
   "repository": {
