@@ -4,6 +4,7 @@
   "description": "Makes slate, also makes slate ready docs from Postgres",
   "author": "Caleb Brewer (caleb@cazzer.io)",
   "license": "MIT",
+  "main":  "./lib/build-shins",
   "dependencies": {
     "commander": "^2.11.0",
     "json2md": "^1.5.10",
