@@ -5,6 +5,7 @@ import fs from 'fs-extra'
 import path from 'path'
 import program from 'commander'
 import shins from 'shins'
+import npmRoot from 'npm-root'
 
 const d = new Debug('make-shins')
 
@@ -40,21 +41,29 @@ shins.render(
       // prepare by removing, since shins uses symlinks which break copySync
       fs.removeSync(program.output)
       d('Writing output')
-      fs.copySync(path.join(__dirname, '../node_modules/shins'), program.output)
-      fs.writeFileSync(path.join(program.output, 'index.html'), html)
-
-      if (program['custom-css']) {
-        d('Copying custom CSS')
+      npmRoot({global: true}, (error, rootPath) => {
         fs.copySync(
-          program['custom-css'],
-          path.join(program.output, '/pub/css')
+          path.join(
+            rootPath,
+            '/node_modules/make-shins/node_modules/shins'
+          ),
+          program.output
         )
-      }
+        fs.writeFileSync(path.join(program.output, 'index.html'), html)
 
-      if (program.logo) {
-        d('Copying logo.png')
-        fs.copySync(program.logo, path.join(program.output, 'source/images'))
-      }
+        if (program['custom-css']) {
+          d('Copying custom CSS')
+          fs.copySync(
+            program['custom-css'],
+            path.join(program.output, '/pub/css')
+          )
+        }
+
+        if (program.logo) {
+          d('Copying logo.png')
+          fs.copySync(program.logo, path.join(program.output, 'source/images'))
+        }
+      })
     }
     d('Finished')
     console.timeEnd('make-shins')
