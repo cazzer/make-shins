@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
-import debug from 'debug'
+import Debug from 'debug'
 import fs from 'fs-extra'
 import path from 'path'
 import program from 'commander'
 import shins from 'shins'
 
-const d = new debug('make-shins')
+const d = new Debug('make-shins')
 
 program
   .version('0.1.0')
@@ -20,10 +20,10 @@ program
 
 console.time('make-shins')
 d('Reading markdown')
-const markdownString = fs.readFileSync(path.resolve(program.input), "utf8")
+const markdownString = fs.readFileSync(path.resolve(program.input), 'utf8')
 
 d('Rendering shins')
-const what = shins.render(
+shins.render(
   markdownString,
   {
     customCss: program['custom-css'],
