@@ -64,7 +64,10 @@ shins.render(
 
         if (program.logo) {
           d('Copying logo.png')
-          fs.copySync(program.logo, path.join(program.output, 'source/images'))
+          fs.copySync(
+            program.logo,
+            path.join(program.output, 'source/images/logo.png')
+          )
         }
       })
     }
