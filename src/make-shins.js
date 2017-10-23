@@ -47,7 +47,10 @@ shins.render(
             rootPath,
             '/make-shins/node_modules/shins'
           ),
-          program.output
+          program.output,
+          {
+            dereference: true
+          }
         )
         fs.writeFileSync(path.join(program.output, 'index.html'), html)
 
