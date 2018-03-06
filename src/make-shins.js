@@ -15,8 +15,9 @@ program
   .option('-o, --output <output>', 'Output directory', 'public')
   .option('-l, --logo <logo>', 'logo.png file to use')
   .option('-c, --custom-css <custom-css>', 'Directory to custom CSS')
-  .option('-i, --inline <inline>', 'Inlines CSS and JS, minifies output')
-  .option('-m, --minify <minify>', 'Minifies the output')
+  .option('-i, --inline', 'Inlines CSS and JS, minifies output')
+  .option('-m, --minify', 'Minifies the output')
+  .option('-l, --local', 'Specify that this module is installed locally and not globally')
   .parse(process.argv)
 
 console.time('make-shins')
@@ -41,7 +42,9 @@ shins.render(
       // prepare by removing, since shins uses symlinks which break copySync
       fs.removeSync(program.output)
       d('Writing output')
-      npmRoot({global: true}, (error, rootPath) => {
+      npmRoot({
+        global: !program.local
+      }, (error, rootPath) => {
         fs.copySync(
           path.join(
             rootPath,
