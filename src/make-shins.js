@@ -28,7 +28,7 @@ d('Rendering shins')
 shins.render(
   markdownString,
   {
-    customCss: program['custom-css'],
+    customCss: program.customCss,
     inline: program.inline,
     minify: program.minify
   },
@@ -57,10 +57,10 @@ shins.render(
         )
         fs.writeFileSync(path.join(program.output, 'index.html'), html)
 
-        if (program['custom-css']) {
+        if (program.customCss) {
           d('Copying custom CSS')
           fs.copySync(
-            program['custom-css'],
+            program.customCss,
             path.join(program.output, '/pub/css')
           )
         }
