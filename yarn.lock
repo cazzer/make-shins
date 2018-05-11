@@ -2573,9 +2573,9 @@ shelljs@^0.7.5:
     interpret "^1.0.0"
     rechoir "^0.6.2"
 
-shins@^2.0.1-5:
-  version "2.0.1-5"
-  resolved "https://registry.yarnpkg.com/shins/-/shins-2.0.1-5.tgz#c393529768d9e83c0ac4eff2959889eea2436425"
+shins@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/shins/-/shins-2.1.0.tgz#93faccfb43a4383c13ab35bbdb6fecce23eb806a"
   dependencies:
     call-me-maybe "^1.0.1"
     cheerio "^1.0.0-rc.2"
