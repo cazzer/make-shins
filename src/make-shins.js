@@ -10,7 +10,7 @@ import npmRoot from 'npm-root'
 const d = new Debug('make-shins')
 
 program
-  .version('0.1.0')
+  .version('0.3.2')
   .option('-i, --input <input>', 'Input markdown file', 'index.html.md')
   .option('-o, --output <output>', 'Output directory', 'public')
   .option('-l, --logo <logo>', 'logo.png file to use')
