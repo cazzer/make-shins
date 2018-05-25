@@ -1,6 +1,6 @@
 {
   "name": "make-shins",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "CLI for Shins, helpful for generating static assets",
   "author": "Caleb Brewer (caleb@cazzer.io)",
   "repository": {
@@ -26,9 +26,10 @@
   "dependencies": {
     "commander": "^2.11.0",
     "debug": "^3.1.0",
+    "es6-promisify": "^6.0.0",
     "fs-extra": "^4.0.2",
     "npm-root": "^1.1.0",
-    "shins": "2.1.0"
+    "shins": "^2.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.0",
