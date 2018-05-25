@@ -16,7 +16,7 @@ export default async function makeShins(options) {
   const markdownString = fs.readFileSync(path.resolve(options.input), 'utf8')
 
   d('Rendering shins')
-  const html = shinsRenderAsync(
+  const html = await shinsRenderAsync(
     markdownString,
     {
       customCss: options.customCss,
@@ -47,10 +47,21 @@ export default async function makeShins(options) {
 
     if (options.customCss) {
       d('Copying custom CSS')
-      await fs.copy(
-        options.customCss,
-        path.join(options.output, '/pub/css')
-      )
+
+      const overrides = [
+        'print_overrides.css',
+        'screen_overrides.css',
+        'theme_overrides.css'
+      ]
+      for (var i = 0, l = overrides.length; i < l; i++) {
+        if (fs.pathExists(path.resolve(options.customCss, overrides[i]))) {
+          d(`Copying ${overrides[i]}`)
+          await fs.copy(
+            path.resolve(options.customCss, overrides[i]),
+            path.join(options.output, 'pub/css', overrides[i])
+          )
+        }
+      }
     }
 
     if (options.logo) {

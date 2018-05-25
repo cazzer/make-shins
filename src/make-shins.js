@@ -8,7 +8,7 @@ program
   .option('-i, --input <input>', 'Input markdown file', 'index.html.md')
   .option('-o, --output <output>', 'Output directory', 'public')
   .option('-l, --logo <logo>', 'logo.png file to use')
-  .option('-c, --custom-css <custom-css>', 'Directory to custom CSS')
+  .option('-c, --custom-css <custom-css>', 'Directory to CSS overrides')
   .option('-i, --inline', 'Inlines CSS and JS, minifies output')
   .option('-m, --minify', 'Minifies the output')
   .option('-l, --local', 'Specify that this module is installed locally and not globally')
