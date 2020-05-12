@@ -15,7 +15,7 @@
     -c, --custom-css <custom-css>  Directory to custom CSS
     -i, --inline                   Inlines CSS and JS, minifies output
     -m, --minify                   Minifies the output
-    -l, --local                    Specify that this module is installed locally and not globally
+    -L, --local                    Specify that this module is installed locally and not globally
     -h, --help                     output usage information
 ```
 *Note: This package will copy files from the install directory so be sure
