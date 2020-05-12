@@ -11,7 +11,7 @@ program
   .option('-c, --custom-css <custom-css>', 'Directory to CSS overrides')
   .option('-i, --inline', 'Inlines CSS and JS, minifies output')
   .option('-m, --minify', 'Minifies the output')
-  .option('-l, --local', 'Specify that this module is installed locally and not globally')
+  .option('-L, --local', 'Specify that this module is installed locally and not globally')
   .parse(process.argv)
 
 makeShins(program)
